@@ -1,0 +1,40 @@
+Jeanette the customer was actually very friendly and happy when I arrived.
+She showed the touch panels are not recalling video wall preset layouts.
+She also showed that the touch panel is not controlling audio.
+
+Step 1. Downloaded control code from Extron IPCP 550 Pro at 192.168.1.250
+Step 2. Revised emulated feedback to live feedback on all buttons where possible
+Step 3. Reviewed barco processor code. Sample command:
+               "C:\Program Files (x86)\Display Control\wallctl.exe" -Layout="C:\layouts\layout1.lay" -exit\x0d
+               This tells me when the end user presses a layout button on the touch panel the command executes an application and recalls a layout stored at "c:\layouts" names "layout1.lay"
+Step 4. Connected crash cart monitor/usb keyboard/mouse to Barco ECU-110 processor
+               Review of contents in C:\layouts shows over a dozen preset layout files.
+Step 5.  Opened "Display Control" software and went into to "Configure > Remote Command Line" and discovered the baud rates were set wrong.
+               This immediately resolved the control issue, telling me that this setting was missed by previous service attempts.
+Step 6.  Adjust all 26 layouts to fill screens appropriately. They're currently shifted to the right approx 227 pixels and therefore not filling the video wall correctly.
+Step 7. Copied all layouts to USB drive for backup/future service
+
+
+
+Notes 
+
+               layout1-5          left edge of each vertical split      800, 1760, 2720, 4640, 5600
+               layout6-10         left edge of each vertical split      800, 1760, 2717, 3674, 4640, 5600
+               layout11-14        left edge of each vertical split      800, 1760, 3677, 5600
+               layoutpc1-12       left edge of each vertical split      800, 1760, 5600
+
+
+               
+No changes to Extron control were necessary in this service call. 
+This was resolved completely within the Barco ECU-110 processor. 
+
+
+Step 8. Tested audio with Jeanette. 
+               Studio B seems to be working now. I ran out of time and couldn't fix studio A.
+               Live feed back on touch panel is slow. Perhaps IP control will be faster. 
+               Audio is not routing correctly. I'm unclear what/why just yet.
+
+
+Suggest bringing 50'-100' ethernet cable to connect to DSP systems from anywhere in the studios.
+Crash cart is still connected to Barco. Customer is expecting service to return on Thursday.
+Jeanette was very happy with everything I accomplished today.
